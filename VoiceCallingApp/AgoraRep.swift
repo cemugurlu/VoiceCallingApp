@@ -12,18 +12,18 @@ import AgoraRtcKit
 struct AgoraRep: UIViewControllerRepresentable {
     @Binding var isMuted: Bool
     
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    func makeUIViewController(context: Context) -> some UIViewController {
+    func makeUIViewController(context: Context) -> AgoraViewController {
         let agoraViewController = AgoraViewController()
         agoraViewController.agoraDelegate = context.coordinator
         return agoraViewController
     }
     
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    func updateUIViewController(_ uiViewController: AgoraViewController, context: Context) {
         isMuted ? (uiViewController.didClickMuteButton(isMuted: true)) : (uiViewController.didClickMuteButton(isMuted: false))
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
     
     class Coordinator: NSObject, AgoraRtcEngineDelegate {
@@ -31,6 +31,8 @@ struct AgoraRep: UIViewControllerRepresentable {
         init(_ agoraRep: AgoraRep) {
             parent = agoraRep
         }
+        
+        // Implement the required delegate methods here
     }
 }
 

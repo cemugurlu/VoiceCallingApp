@@ -68,14 +68,13 @@
 		F83FD7DC29DF4B9A0072F2D1 /* VoiceCallingApp */ = {
 			isa = PBXGroup;
 			children = (
+				F818D70429E0573D006C83AC /* AgoraRep.swift */,
 				F83FD7EF29DF4E950072F2D1 /* Info.plist */,
 				F83FD7DD29DF4B9A0072F2D1 /* VoiceCallingAppApp.swift */,
 				F818D70129E04E78006C83AC /* ViewController */,
-				F83FD7F229DF4FB90072F2D1 /* Service */,
 				F83FD7EB29DF4BB10072F2D1 /* View */,
 				F83FD7E129DF4B9C0072F2D1 /* Assets.xcassets */,
 				F83FD7E329DF4B9C0072F2D1 /* Preview Content */,
-				F818D70429E0573D006C83AC /* AgoraRep.swift */,
 			);
 			path = VoiceCallingApp;
 			sourceTree = "<group>";
@@ -95,13 +94,6 @@
 				F818D70229E05487006C83AC /* CallView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F83FD7F229DF4FB90072F2D1 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
