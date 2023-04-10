@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var isShowingCallView: Bool = false
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: {isShowingCallView = true}) {
               Text("Join Call")
                 .font(.title)
                 .foregroundColor(.white)

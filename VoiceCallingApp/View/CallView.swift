@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct CallView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var isMuted: Bool = false
+    @State private var isMuted: Bool = true
     
     var body: some View {
         VStack {
@@ -18,7 +19,7 @@ struct CallView: View {
             
             Spacer()
             
-            AgoraRep()
+            AgoraRep(isMuted: $isMuted)
                 .frame(width: 0, height: 0, alignment: .center)
             
             HStack {
@@ -42,6 +43,19 @@ struct CallView: View {
                     }
             }
             .padding()
+        }
+        .onAppear {
+            requestMicrophonePermission()
+        }
+    }
+    
+    func requestMicrophonePermission() {
+        AVAudioSession.sharedInstance().requestRecordPermission { [self] granted in
+            if granted {
+                print("Microphone permission granted")
+            } else {
+                print("Microphone permission denied")
+            }
         }
     }
 }
