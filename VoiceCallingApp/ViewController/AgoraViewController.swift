@@ -7,6 +7,7 @@
 
 import Foundation
 import AgoraRtcKit
+import AVKit
 
 class AgoraViewController: UIViewController {
     var agoraKit: AgoraRtcEngineKit?
@@ -23,24 +24,24 @@ class AgoraViewController: UIViewController {
     }
     
     func joinChannel() {
-        agoraKit?.joinChannel(byToken: "007eJxTYHB18glvsJlx5FJ22cMKG56Ju9uivnzcw/dx5utJ5Q77dxUoMFikpJgmmhoYGaZappmkpVgkGpqbphoapJhbWKQkpiUl7pc0SGkIZGTQPt3KxMgAgSC+AENIanGJgnNGYl5eao6Cc2ouAwMAY/ck/Q==", channelId: "TestChannel", info: nil, uid: 0, joinSuccess: {(channel, uid, elapsed) in})
+        agoraKit?.joinChannel(byToken: "007eJxTYPj6y8PO+8RVzfJK9VnycSfmzrwuts/dI2HJmk9qspK6Gx8oMFikpJgmmhoYGaZappmkpVgkGpqbphoapJhbWKQkpiUlvnQ0SGkIZGTY/FWGmZEBAkF8AYaQ1OISBeeMxLy81BwF59RcBgYAFcgkKQ==", channelId: "Test Channel Cem", info: nil, uid: 0, joinSuccess: {(channel, uid, elapsed) in})
     }
     
     func leaveChannel() {
-           agoraKit?.leaveChannel(nil)
-       }
+        agoraKit?.leaveChannel(nil)
+    }
     
     func destroyInstance() {
-           AgoraRtcEngineKit.destroy()
-       }
+        AgoraRtcEngineKit.destroy()
+    }
     
     func didClickMuteButton(isMuted: Bool) {
         isMuted ? (agoraKit?.muteLocalAudioStream(true)) : (agoraKit?.muteLocalAudioStream(false))
-      }
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
-           leaveChannel()
-           destroyInstance()
-       }
-
+        leaveChannel()
+        destroyInstance()
+    }
+    
 }
